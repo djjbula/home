@@ -1,0 +1,359 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Header */
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 20px;
+    background-color: transparent; /* Torna o cabeçalho transparente */
+    color: #fff;
+    position: fixed; /* Mantém o cabeçalho fixo no topo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+header .icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    width: 100%;
+    padding: 0;
+}
+
+/* Ajuste do tamanho e efeito dos ícones */
+header .icons img {
+    width: 40px; /* Define um tamanho fixo */
+    height: auto;
+    filter: brightness(0) invert(1); /* Mantém os ícones brancos */
+    transition: filter 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Efeito ao passar o mouse (mantendo a identidade visual de cada um) */
+header .icons a:nth-child(1) img:hover { filter: invert(29%) sepia(84%) saturate(6352%) hue-rotate(314deg) brightness(97%) contrast(92%); } /* Instagram */
+header .icons a:nth-child(2) img:hover { filter: invert(30%) sepia(98%) saturate(7488%) hue-rotate(0deg) brightness(97%) contrast(110%); } /* YouTube */
+header .icons a:nth-child(3) img:hover { filter: invert(55%) sepia(81%) saturate(1357%) hue-rotate(1deg) brightness(93%) contrast(102%); } /* SoundCloud */
+header .icons a:nth-child(4) img:hover { filter: invert(40%) sepia(90%) saturate(420%) hue-rotate(190deg) brightness(95%) contrast(90%); } /* E-mail (azul) */
+header .icons a:nth-child(5) img:hover { filter: invert(65%) sepia(94%) saturate(352%) hue-rotate(110deg) brightness(92%) contrast(85%); } /* WhatsApp */
+header .icons a:nth-child(6) img:hover { filter: invert(50%) sepia(70%) saturate(500%) hue-rotate(140deg) brightness(90%) contrast(80%); } /* Coleção */
+
+
+/* Hero Section */
+
+.hero {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('IMG/hero.png');
+  background-repeat: no-repeat;
+  background-size: 100% auto; /* 💡 ajusta 100% da largura, altura automática */
+  background-position: center;
+  background-color: #f2eee8; /* cor de fundo caso sobre espaço vertical */
+}
+
+
+
+
+/* Hero Section - Centralização */
+.texto-hero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    max-width: 700px;
+    padding: 20px;
+    color: white;
+    z-index: 2;
+}
+
+.texto-hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5rem;
+    font-weight: bold;
+    letter-spacing: 10px;
+    margin-bottom: 30px;
+    line-height: 1;
+}
+
+.texto-hero p {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.texto-esquerdo {
+    text-align: center;
+    text-indent: 0;
+    margin-top: 10px;
+}
+
+
+
+/* Para telas ainda menores */
+
+@media (max-width: 768px) {
+
+
+	  header .icons {
+		justify-content: center;
+		padding: 0;
+		width: 100%;
+	  }
+	}
+
+
+	
+	
+    /* Ajuste na hero */
+    .hero {
+        position: relative; /* Necessário para o overlay */
+        background-image: url('IMG/hero.png'); /* Mantém a imagem */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    /* Criando um efeito escurecido sobre a imagem */
+    .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6); /* Ajuste da transparência e escuridão */
+        z-index: 1;
+    }
+
+    /* Centralizando o conteúdo da hero */
+    .texto-hero {
+        position: relative; /* Para sobrepor o overlay */
+        left: 50%;
+        transform: translateX(-50%); /* Centraliza horizontalmente */
+        text-align: left;
+        max-width: 90%; /* Garante que não fique muito largo */
+        z-index: 2;
+		top: 130px;
+    }
+	
+
+    /* Ajustando os textos */
+    .texto-hero h1 {
+        font-size: 9rem; /* Reduz o tamanho */
+        letter-spacing: 5px; /* Ajusta espaçamento */
+		text-align: center;
+		bottom-top: 100px;
+    }
+
+    .texto-hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .texto-hero p {
+        font-size: 1.1rem;
+		text-indent: 40px; /* recuo no início da primeira linha */
+    }
+}
+
+	.texto-esquerdo {
+		text-align: left;
+		width: 100%;
+		max-width: 280px;
+		text-indent: 60px;
+	}
+
+	
+
+
+
+
+
+.profile img {
+        width: 100%; /* Ocupa mais a largura */
+        max-width: 650px; /* Diminui um pouco mais */
+    }
+}
+
+.profile.left {
+    flex-direction: row;
+}
+
+.profile.right {
+    flex-direction: row-reverse;
+}
+
+.profile img {
+    width: 320px;
+    height: 400px;
+    object-fit: cover;
+    /*border: 2px solid #555;*/
+    border-radius: 15px;
+}
+
+.profile .text {
+    flex: 1;
+}
+
+.profile h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.profile p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+	text-align: justify;
+}
+/* Galeria */
+.gallery {
+    padding: 30px 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Linhas da galeria */
+.gallery .row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+    position: relative;
+    transform: translateX(-50%);
+    transition: transform 0.3s ease-out;
+}
+
+/* Diferentes deslocamentos iniciais */
+.gallery .row:nth-child(odd) {
+    transform: translateX(-150px);
+}
+
+.gallery .row:nth-child(even) {
+    transform: translateX(-200px);
+}
+
+/* Transformar imagens da galeria em preto e branco */
+.gallery .row img {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    height: 300px;
+    width: auto;
+    object-fit: cover;
+}
+
+
+/* --- ATIVAÇÃO POR SCROLL NO MOBILE --- */
+@media (max-width: 768px) {
+	
+    .gallery .row.in-view img {
+        filter: grayscale(0%) !important;
+        opacity: 0.95;
+        transition: filter 0.5s ease, opacity 0.5s ease;
+    }
+}
+
+
+
+
+
+
+/* Seção de Playlists */
+.playlists {
+	
+    padding: 50px 10%;
+    text-align: center;
+}
+
+.playlist-container {
+    display: flex;
+    flex-direction: column; /* Mantém as linhas separadas */
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Cada linha de playlists */
+    .playlist-row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+        gap: 15px; /* Espaço entre as playlists */
+        padding: 0 5%; /* Margem lateral para não encostar nas bordas */
+    }
+
+    .playlist-row iframe {
+        width: 100%; /* Faz com que os players se ajustem ao tamanho da coluna */
+        height: 380px; /* Ajuste da altura */
+    }
+}
+
+.playlist-container iframe {
+   /* border: 2px solid #555;*/
+    border-radius: 12px;
+    width: 300px;
+    height: 380px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #000;
+    transform: scale(0.95);
+    transform-origin: top left;
+} 
+
+/* Video Section */
+.video-set {
+
+
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.video-set iframe {
+  width: 90%;
+  aspect-ratio: 16 / 9;
+  max-width: 900px;
+  border: none;
+}
+
+.responsive-video {
+  width: 90%;
+  aspect-ratio: 16 / 9;
+  max-width: 900px;
+  border: none;
+}
+
+
+/* Footer */
+footer {
+    padding: 20px;
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    border-top: 2px solid #555;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #111;
+    margin-bottom: 30px;
+}

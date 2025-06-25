@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coleção de Discos</title>
+    <link rel="stylesheet" href="styles.css">
+	<link href="https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap" rel="stylesheet">
+
+
+    <style>
+        body {
+            background: url('img/fundocolecao.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 200px;
+            background: rgba(0, 0, 0, 0.1);
+			background-opacity: 90%;
+        }
+		.home-link {
+			font-family: 'Sigmar One', cursive;
+			font-size: 40px;
+			text-decoration: none;
+			color: white;
+			text-transform: none;
+
+			letter-spacing: 2px;
+			transition: color 0.3s ease-in-out;
+		}
+
+		.home-link:hover {
+			color: black; /* Altere para a cor desejada no hover */
+		}
+
+        .icons {
+            display: flex;
+            gap: 15px;
+        }
+        .icons img {
+            width: 30px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .icons img:hover {
+            transform: scale(1.2);
+        }
+        .colecao {
+            padding-top: 70px;
+        }
+        .grid-colecao {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            padding: 20px;
+            justify-items: center;
+        }
+        .disco img {
+            width: 100%;
+            max-width: 150px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease-in-out;
+        }
+        .disco img:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+    <a href="pindorama.html" class="home-link">Pindorama</a>
+
+
+        <div class="icons">
+            <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="img/youtube.png" alt="YouTube"></a>
+            <a href="#"><img src="img/soundcloud.png" alt="SoundCloud"></a>
+            <a href="#"><img src="img/whatsapp.png" alt="WhatsApp"></a>
+            <a href="#"><img src="img/email.png" alt="E-mail"></a>
+        </div>
+    </header>
+
+    <!-- Coleção de Discos -->
+    <section class="colecao">
+        <!-- <h1>Coleção de Discos</h1>-->
+        <div class="grid-colecao">
+            <!-- As imagens serão inseridas aqui -->
+
+			<script>
+    // Criando um array com os números das imagens
+    let imagens = [];
+    for (let i = 1; i <= 100; i++) {
+        imagens.push(i);
+    }
+
+    // Algoritmo de Fisher-Yates para embaralhar o array
+    for (let i = imagens.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [imagens[i], imagens[j]] = [imagens[j], imagens[i]]; // Troca os elementos
+    }
+
+    // Inserindo as imagens na página
+    imagens.forEach(num => {
+        document.write(`<div class="disco"><img src='img/colecao/${num}.jpg' alt='Disco ${num}'></div>`);
+    });
+</script>
+
+        </div>
+    </section>
+</body>
+</html>
