@@ -121,7 +121,7 @@ header .icons a:nth-child(6) img:hover { filter: invert(50%) sepia(70%) saturate
     /* Ajuste na hero */
     .hero {
         position: relative; /* Necessário para o overlay */
-        background-image: url('IMG/hero.png'); /* Mantém a imagem */
+        background-image: url('img/hero.png'); /* Mantém a imagem */
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
