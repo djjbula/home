@@ -58,7 +58,7 @@ header .icons a:nth-child(6) img:hover { filter: invert(50%) sepia(70%) saturate
 .hero {
   width: 100vw;
   height: 100vh;
-  background-image: url('IMG/hero.png');
+  background-image: url('img/hero.png');
   background-repeat: no-repeat;
   background-size: 100% auto; /* 💡 ajusta 100% da largura, altura automática */
   background-position: center;
