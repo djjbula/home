@@ -85,7 +85,7 @@ header .icons a:nth-child(6) img:hover { filter: invert(50%) sepia(70%) saturate
 
 .texto-hero h1 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 16.5rem;
+    font-size: 5rem;
     font-weight: bold;
     letter-spacing: 10px;
     margin-bottom: 30px;
