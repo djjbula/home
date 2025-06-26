@@ -107,34 +107,7 @@ header .icons a:nth-child(6) img:hover { filter: invert(50%) sepia(70%) saturate
   font-weight: bold;
 }
 
-@media (max-width: 768px) {
-  .texto-hero {
-    padding: 20px;
-    max-width: 90%;
-    text-align: justify;
-    margin: 0 auto;
-  }
 
-  .texto-hero h1 {
-    font-size: 3.5rem;
-    letter-spacing: 3px;
-    text-align: center;
-  }
-
-  .texto-hero p {
-    font-size: 1rem;
-    text-align: justify;
-    text-indent: 20px;
-    margin-bottom: 10px;
-  }
-
-  .texto-esquerdo {
-    max-width: 100%;
-    margin-top: 15px;
-    text-align: justify;
-    text-indent: 20px;
-  }
-}
 
 
 
