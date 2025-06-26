@@ -75,7 +75,7 @@ header .icons a:nth-child(6) img:hover { filter: invert(50%) sepia(70%) saturate
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: center;
+    text-align: left;
     max-width: 700px;
     padding: 20px;
     color: white;
