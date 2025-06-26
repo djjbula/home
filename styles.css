@@ -332,17 +332,18 @@ header .icons a:nth-child(6) img:hover { filter: invert(50%) sepia(70%) saturate
 }
 
 .video-set iframe {
-  width: 95%;
+  width: 90%;
   aspect-ratio: 16 / 9;
   max-width: 900px;
   border: none;
 }
 
 .responsive-video {
-  width: 95%;
+  width: 90%;
   aspect-ratio: 16 / 9;
   max-width: 900px;
   border: none;
+
 }
 
 
