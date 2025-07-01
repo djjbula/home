@@ -1,4 +1,4 @@
-/* Reset básico */
+e/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -178,7 +178,7 @@ header .icons a:nth-child(6) img:hover { filter: invert(50%) sepia(70%) saturate
   }
 
   .texto-esquerdo {
-    text-align: left;
+    text-align: center;
     text-indent: 20px;
     max-width: 100%;
     margin-top: 30px;
