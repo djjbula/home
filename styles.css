@@ -172,7 +172,7 @@ header .icons a:nth-child(6) img:hover { filter: invert(50%) sepia(70%) saturate
 
   .texto-hero p {
     font-size: 1rem;
-    text-align: justify;
+    text-align: center;
     text-indent: 20px;
     margin-bottom: 10px;
   }
