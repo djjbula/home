@@ -19,7 +19,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 20px;
+    padding: 25px 0;
     background-color: transparent; /* Torna o cabeçalho transparente */
     color: #fff;
     position: fixed; /* Mantém o cabeçalho fixo no topo */
@@ -32,6 +32,7 @@ header {
 header .icons {
     display: flex;
     justify-content: center;
+	  align-items: center;
     gap: 25px;
     width: 100%;
     padding: 0;
