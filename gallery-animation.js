@@ -1,3 +1,5 @@
+alert("JS carregado com sucesso");
+
 let lastScrollY = window.scrollY;
 let ticking = false;
 
