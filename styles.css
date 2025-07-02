@@ -246,6 +246,17 @@ header .icons a:nth-child(6) img:hover { filter: invert(50%) sepia(70%) saturate
   position: relative;
 }
 
+.gallery .row::before {
+  content: "↔";
+  position: absolute;
+  left: 0;
+  top: -20px;
+  font-size: 20px;
+  color: red;
+}
+
+
+
 .gallery .row {
   display: flex;
   gap: 10px;
