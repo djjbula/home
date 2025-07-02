@@ -238,34 +238,31 @@ header .icons a:nth-child(6) img:hover { filter: invert(50%) sepia(70%) saturate
 /* Galeria */
 .gallery {
   padding: 30px 0;
+  overflow-x: visible;
   overflow-y: visible;
-  overflow-x: visible; /* <- ESSENCIAL */
   display: flex;
   flex-direction: column;
   gap: 30px;
   position: relative;
 }
 
-
 .gallery .row {
   display: flex;
   gap: 10px;
   flex-wrap: nowrap;
   position: relative;
-  transition: transform 0.3s ease-out;
+  width: max-content; /* Isso é crucial pro parallax */
   will-change: transform;
-
-  width: max-content; /* <<< ESSENCIAL: permite que a row tenha o tamanho natural de todas as imagens juntas */
+  transition: transform 0.3s ease-out;
 }
 
 .gallery .row img {
-  filter: grayscale(100%);
-  transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
   height: 300px;
   width: auto;
   object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
-
 
 /* Diferentes deslocamentos iniciais */
 .gallery .row:nth-child(odd) {
@@ -281,12 +278,11 @@ header .icons a:nth-child(6) img:hover { filter: invert(50%) sepia(70%) saturate
 
 /* --- ATIVAÇÃO POR SCROLL NO MOBILE --- */
 @media (max-width: 768px) {
-	
-    .gallery .row.in-view img {
-        filter: grayscale(0%) !important;
-        opacity: 0.95;
-        transition: filter 0.5s ease, opacity 0.5s ease;
-    }
+  .gallery .row.in-view img {
+    filter: grayscale(0%) !important;
+    opacity: 0.95;
+    transition: filter 0.5s ease, opacity 0.5s ease;
+  }
 }
 
 
