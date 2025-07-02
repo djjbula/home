@@ -34,3 +34,5 @@ window.addEventListener("load", () => {
   window.addEventListener("scroll", onScroll);
   handleScroll(); // chama ao carregar
 });
+
+console.log("Parallax ativado!");
