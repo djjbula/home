@@ -10,6 +10,7 @@ body {
     line-height: 1.6;
     background-color: #f0f0f0;
     color: #333;
+	overflow-x: hidden;
 }
 
 
@@ -191,44 +192,7 @@ header .icons a:nth-child(6) img:hover { filter: invert(50%) sepia(70%) saturate
 
 
 
-.profile img {
-        width: 100%; /* Ocupa mais a largura */
-        max-width: 650px; /* Diminui um pouco mais */
-    }
-}
 
-.profile.left {
-    flex-direction: row;
-}
-
-.profile.right {
-    flex-direction: row-reverse;
-}
-
-.profile img {
-    width: 320px;
-    height: 400px;
-    object-fit: cover;
-    /*border: 2px solid #555;*/
-    border-radius: 15px;
-}
-
-.profile .text {
-    flex: 1;
-}
-
-.profile h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-}
-
-.profile p {
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 10px;
-	text-align: justify;
-}
-/* Galeria */
 /* Galeria */
 .gallery {
     padding: 30px 20px;
@@ -280,47 +244,6 @@ header .icons a:nth-child(6) img:hover { filter: invert(50%) sepia(70%) saturate
 
 
 
-
-
-/* Seção de Playlists */
-.playlists {
-	
-    padding: 50px 10%;
-    text-align: center;
-}
-
-.playlist-container {
-    display: flex;
-    flex-direction: column; /* Mantém as linhas separadas */
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Cada linha de playlists */
-    .playlist-row {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* 2 colunas */
-        gap: 15px; /* Espaço entre as playlists */
-        padding: 0 5%; /* Margem lateral para não encostar nas bordas */
-    }
-
-    .playlist-row iframe {
-        width: 100%; /* Faz com que os players se ajustem ao tamanho da coluna */
-        height: 380px; /* Ajuste da altura */
-    }
-}
-
-.playlist-container iframe {
-   /* border: 2px solid #555;*/
-    border-radius: 12px;
-    width: 300px;
-    height: 380px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #000;
-    transform: scale(0.95);
-    transform-origin: top left;
-} 
 
 /* Video Section */
 .video-set {
