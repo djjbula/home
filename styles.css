@@ -237,16 +237,15 @@ header .icons a:nth-child(6) img:hover { filter: invert(50%) sepia(70%) saturate
 }
 /* Galeria */
 .gallery {
-padding: 30px 20px;
-  overflow-y: hidden;
-  overflow-x: visible;
+  padding: 30px 0;
+  overflow-x: hidden;
+  overflow-y: visible;
   display: flex;
   flex-direction: column;
   gap: 30px;
   position: relative;
 }
 
-/* Linhas da galeria */
 .gallery .row {
   display: flex;
   gap: 10px;
@@ -254,7 +253,16 @@ padding: 30px 20px;
   position: relative;
   transition: transform 0.3s ease-out;
   will-change: transform;
-  min-width: 150vw;
+
+  width: max-content; /* <<< ESSENCIAL: permite que a row tenha o tamanho natural de todas as imagens juntas */
+}
+
+.gallery .row img {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  height: 300px;
+  width: auto;
+  object-fit: cover;
 }
 
 
@@ -268,13 +276,6 @@ padding: 30px 20px;
 }
 
 /* Transformar imagens da galeria em preto e branco */
-.gallery .row img {
-    filter: grayscale(100%);
-    transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    height: 300px;
-    width: auto;
-    object-fit: cover;
-}
 
 
 /* --- ATIVAÇÃO POR SCROLL NO MOBILE --- */
