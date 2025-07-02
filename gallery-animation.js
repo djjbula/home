@@ -1,38 +1,38 @@
-window.addEventListener("load", () => {
-  let ticking = false;
+alert("JS carregado com sucesso");
+console.log("ROWS ENCONTRADAS:", document.querySelectorAll(".gallery .row").length);
 
-  function handleScroll() {
-    const scrollY = window.scrollY;
 
-    document.querySelectorAll(".gallery .row").forEach((row, index) => {
-      // Parallax horizontal
-      const speedFactor = 0.3;
-      const baseOffset = index % 2 === 0 ? -200 : -650;
-      const offset = baseOffset + (index % 2 === 0 ? -scrollY * speedFactor : scrollY * speedFactor);
-      row.style.transform = `translateX(${offset}px)`;
+let lastScrollY = window.scrollY;
+let ticking = false;
 
-      // Detecção de visibilidade (mobile)
-      const rect = row.getBoundingClientRect();
-      const rowMiddle = rect.top + rect.height / 2;
-      const viewportMiddle = window.innerHeight / 2;
+function handleScroll() {
+  lastScrollY = window.scrollY;
 
-      if (Math.abs(rowMiddle - viewportMiddle) < rect.height / 2) {
-        row.classList.add("in-view");
-      } else {
-        row.classList.remove("in-view");
-      }
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      document.querySelectorAll(".gallery .row").forEach((row, index) => {
+        // Parallax
+        let speedFactor = 0.3;
+        let baseOffset = index % 2 === 0 ? -200 : -650;
+        let speed = baseOffset + (index % 2 === 0 ? -lastScrollY * speedFactor : lastScrollY * speedFactor);
+        row.style.transform = `translateX(${speed}px)`;
+
+        // Ativação de cor
+        let rect = row.getBoundingClientRect();
+        let rowMiddle = rect.top + rect.height / 2;
+        let viewportMiddle = window.innerHeight / 2;
+
+        if (Math.abs(rowMiddle - viewportMiddle) < rect.height / 2) {
+          row.classList.add("in-view");
+        } else {
+          row.classList.remove("in-view");
+        }
+      });
+      ticking = false;
     });
-
-    ticking = false;
+    ticking = true;
   }
+}
 
-  function onScroll() {
-    if (!ticking) {
-      requestAnimationFrame(handleScroll);
-      ticking = true;
-    }
-  }
-
-  window.addEventListener("scroll", onScroll);
-  handleScroll(); // Executa ao carregar
-});
+window.addEventListener("scroll", handleScroll);
+window.addEventListener("load", handleScroll);
