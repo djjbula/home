@@ -1,5 +1,3 @@
-alert("JS carregado com sucesso");
-console.log("ROWS ENCONTRADAS:", document.querySelectorAll(".gallery .row").length);
 
 
 let lastScrollY = window.scrollY;
