@@ -237,11 +237,13 @@ header .icons a:nth-child(6) img:hover { filter: invert(50%) sepia(70%) saturate
 }
 /* Galeria */
 .gallery {
-    padding: 30px 20px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+padding: 30px 20px;
+  overflow-y: hidden;
+  overflow-x: visible;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: relative;
 }
 
 /* Linhas da galeria */
