@@ -1,7 +1,4 @@
-// Evita duplicação do script se for carregado mais de uma vez
-if (!window.galleryScriptLoaded) {
-  window.galleryScriptLoaded = true;
-
+document.addEventListener("DOMContentLoaded", () => {
   let lastScrollY = window.scrollY;
   let ticking = false;
 
@@ -17,7 +14,7 @@ if (!window.galleryScriptLoaded) {
           let speed = baseOffset + (index % 2 === 0 ? -lastScrollY * speedFactor : lastScrollY * speedFactor);
           row.style.transform = `translateX(${speed}px)`;
 
-          // Ativação de cor quando a row está no centro da tela
+          // Ativação de cor
           let rect = row.getBoundingClientRect();
           let rowMiddle = rect.top + rect.height / 2;
           let viewportMiddle = window.innerHeight / 2;
@@ -34,6 +31,9 @@ if (!window.galleryScriptLoaded) {
     }
   }
 
+  console.log("✅ JS ativo e DOM carregado");
+  console.log("ROWS:", document.querySelectorAll(".gallery .row").length);
+
   window.addEventListener("scroll", handleScroll);
   window.addEventListener("load", handleScroll);
-}
+});
