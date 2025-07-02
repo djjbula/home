@@ -236,43 +236,23 @@ header .icons a:nth-child(6) img:hover { filter: invert(50%) sepia(70%) saturate
 	text-align: justify;
 }
 /* Galeria */
+/* Galeria */
 .gallery {
-  padding: 30px 0;
-  overflow-x: visible;
-  overflow-y: visible;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  position: relative;
+    padding: 30px 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
-.gallery .row::before {
-  content: "↔";
-  position: absolute;
-  left: 0;
-  top: -20px;
-  font-size: 20px;
-  color: red;
-}
-
-
-
+/* Linhas da galeria */
 .gallery .row {
-  display: flex;
-  gap: 10px;
-  flex-wrap: nowrap;
-  position: relative;
-  width: max-content; /* Isso é crucial pro parallax */
-  will-change: transform;
-  transition: transform 0.3s ease-out;
-}
-
-.gallery .row img {
-  height: 300px;
-  width: auto;
-  object-fit: cover;
-  filter: grayscale(100%);
-  transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+    position: relative;
+    transform: translateX(-50%);
+    transition: transform 0.3s ease-out;
 }
 
 /* Diferentes deslocamentos iniciais */
@@ -285,15 +265,23 @@ header .icons a:nth-child(6) img:hover { filter: invert(50%) sepia(70%) saturate
 }
 
 /* Transformar imagens da galeria em preto e branco */
+.gallery .row img {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    height: 300px;
+    width: auto;
+    object-fit: cover;
+}
 
 
 /* --- ATIVAÇÃO POR SCROLL NO MOBILE --- */
 @media (max-width: 768px) {
-  .gallery .row.in-view img {
-    filter: grayscale(0%) !important;
-    opacity: 0.95;
-    transition: filter 0.5s ease, opacity 0.5s ease;
-  }
+	
+    .gallery .row.in-view img {
+        filter: grayscale(0%) !important;
+        opacity: 0.95;
+        transition: filter 0.5s ease, opacity 0.5s ease;
+    }
 }
 
 
