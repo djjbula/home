@@ -73,6 +73,24 @@
         .disco img:hover {
             transform: scale(1.2);
         }
+
+			@media (max-width: 600px) {
+		  .grid-colecao {
+		    grid-template-columns: repeat(3, 1fr);
+		    gap: 8px;
+		    padding: 10px;
+		  }
+		
+		  .disco img {
+		    width: 100%;
+		    height: auto;
+		    max-width: none; /* Garante que ela preencha a célula */
+		  }
+		}
+		
+
+
+	    
     </style>
 </head>
 <body>
