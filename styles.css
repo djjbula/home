@@ -294,3 +294,12 @@ footer {
     color: #111;
     margin-bottom: 30px;
 }
+
+
+/* Hover da galeria no desktop */
+@media (hover: hover) and (pointer: fine) {
+  .gallery .row img:hover {
+    filter: grayscale(0%);
+    opacity: 0.95;
+  }
+}
